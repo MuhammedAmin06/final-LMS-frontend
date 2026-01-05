@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import HomePage from "./HomePage";
+
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -36,11 +36,7 @@ const LoginPage = () => {
     setNewPassword("");
   };
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/home-page");
-    }
-  }, [isLoggedIn, navigate]);
+  
 
   return (
     <>
@@ -48,7 +44,7 @@ const LoginPage = () => {
         {showError && (
           <p style={{ color: "red" }}>Invalid email or password.</p>
         )}
-        {isLoggedIn && <HomePage />}
+        
       </div>
       <form>
         <h1>Login Page</h1>
